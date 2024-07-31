@@ -38,9 +38,8 @@ public class CrptApi {
         String endpoint = baseUrl + "/api/v3/lk/documents/create";
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(endpoint);
         HttpEntity<Object> httpEntity = new HttpEntity<>(requestBody);
-        return null;
-//        HttpEntity<Object> result = restTemplate.exchange(builder.toUriString(), HttpMethod.POST, httpEntity, new ParameterizedTypeReference<>() {});
-//        return result.getBody();
+        HttpEntity<Object> result = restTemplate.exchange(builder.toUriString(), HttpMethod.POST, httpEntity, new ParameterizedTypeReference<>() {});
+        return result.getBody();
     }
 
     @Getter
